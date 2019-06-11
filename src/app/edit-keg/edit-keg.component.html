@@ -1,0 +1,11 @@
+<div *ngIf="selectedKeg">
+  <h4>{{selectedKeg.name}}</h4>
+  <h5>Edit keg</h5>
+  <label>Enter keg name:</label>
+  <input [(ngModel)]="selectedKeg.name">
+  <label>Enter keg's price (8, 10,12)</label><br>
+  <input type="radio" [(ngModel)]="selectedKeg.price" [value]="12">12 (Low Priority)<br>
+  <input type="radio" [(ngModel)]="selectedKeg.price" [value]="10">10 (Medium Priority)<br>
+  <input type="radio" [(ngModel)]="selectedKeg.price" [value]="8">8(High Priority)
+  <button (click)="finishedEditing()">Done</button>
+</div>

@@ -1,0 +1,4 @@
+<ul>
+  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList">{{currentKeg.name}}
+    <button (click)="editButtonClicked(currentKeg)">Edit!</button></li>
+</ul>
