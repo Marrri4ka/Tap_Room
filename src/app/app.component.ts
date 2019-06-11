@@ -9,6 +9,7 @@ import { Keg } from './models/keg.model';
 })
 
 export class AppComponent {
+  // public done: boolean = false;
   currentFocus: string = 'Angular Homework';
   selectedKeg = null;
 
@@ -20,8 +21,8 @@ export class AppComponent {
   ];
 
   editKeg(clickedKeg){
-    console.log("Start editing: " + clickedKeg);
     this.selectedKeg = clickedKeg;
+    console.log("keg selected ", this.selectedKeg)
   }
   finishedEditing() {
    this.selectedKeg = null;

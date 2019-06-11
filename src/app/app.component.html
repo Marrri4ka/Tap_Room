@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-keg-list [childKegList]="masterKegList"></app-keg-list>
+<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
 
 <div style="text-align:center">
   <h1>
@@ -7,7 +7,7 @@
   </h1>
   <h3>{{currentFocus}}</h3>
 
-  <app-edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()">
+  <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()">
   </app-edit-keg>
 
   <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
