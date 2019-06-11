@@ -36,4 +36,8 @@ priceColor(currentKeg){
   this.filterByCompleteness = optionFromMenu;
 }
 
+toggleDone(clickedKeg: Keg, setCompleteness: boolean) {
+   clickedKeg.done = setCompleteness;
+ }
+
 }

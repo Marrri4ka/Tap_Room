@@ -7,7 +7,7 @@
 </select>
 
 <ul>
-  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness">{{currentKeg.name}} {{currentKeg.price}}
+  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.name}} {{currentKeg.price}}
     <input *ngIf="currentKeg.done === true" type="checkbox" checked (click)="toggleDone(currentKeg, false)"/>
     <input *ngIf="currentKeg.done === false" type="checkbox" (click)="toggleDone(currentKeg, true)"/>
     <button (click)="editButtonClicked(currentKeg)">Edit!</button>
