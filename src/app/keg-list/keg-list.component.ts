@@ -13,13 +13,41 @@ export class KegListComponent  {
   filterByCompleteness: string = "incompleteTasks";
 
 kegs :  Keg[] = [
-  new Keg ('wine','wine',12),
-  new Keg ('wine','wine',10),
-  new Keg ('wine','wine',8),
+  new Keg ('wine','wine',12,124,3),
+  new Keg ('wine','wine',10,124,5),
+  new Keg ('wine','wine',8,124,7),
 ];
 
 editButtonClicked(kegToEdit: Keg) {
   this.clickSender.emit(kegToEdit);
+}
+
+sellButtonClicked(currentKeg: Keg)
+{
+currentKeg.pints -=1;
+}
+
+happyHourButtonClicked(currentKeg: Keg)
+{
+  currentKeg.price -=5;
+}
+
+sellGrowlerButtonClicked(currentKeg: Keg)
+{
+currentKeg.pints -=32;
+if(currentKeg.pints <= 0)
+{
+  alert("No beer more!")
+}
+}
+
+sellLargeGrowlerButtonClicked(currentKeg: Keg)
+{
+currentKeg.pints -=64;
+if(currentKeg.pints <= 0)
+{
+  alert("No beer more!")
+}
 }
 
 priceColor(currentKeg){

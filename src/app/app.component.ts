@@ -10,19 +10,18 @@ import { Keg } from './models/keg.model';
 
 export class AppComponent {
   // public done: boolean = false;
-  currentFocus: string = 'Angular Homework';
+  currentFocus: string = 'Come in!';
   selectedKeg = null;
 
   masterKegList: Keg[] = [
-    new Keg ('wine', 'wine',12),
-    new Keg ('wine', 'wine',12),
-    new Keg ('wine', 'wine',12)
+    new Keg ('wine', 'wine',12,124,3),
+    new Keg ('wine', 'wine',12,124,5),
+    new Keg ('wine', 'wine',12,124,7)
 
   ];
 
   editKeg(clickedKeg){
     this.selectedKeg = clickedKeg;
-    console.log("keg selected ", this.selectedKeg)
   }
   finishedEditing() {
    this.selectedKeg = null;

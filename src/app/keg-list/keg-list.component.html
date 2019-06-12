@@ -1,4 +1,17 @@
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
 
 <select (change)="onChange($event.target.value)">
   <option value="allKegs">All Kegs</option>
@@ -6,10 +19,213 @@
   <option value="incompleteKegs" selected="selected">Incomplete Kegs</option>
 </select>
 
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs">All Kegs</option>
+  <option value="completedKegs">Alcohol content uder 3</option>
+  <option value="incompleteKegs" selected="selected">Alcohol content under 7</option>
+</select>
+
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs">All Kegs</option>
+  <option value="completedKegs">Pints under 10</option>
+
+</select>
+
 <ul>
-  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.name}} {{currentKeg.price}}
+  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">
+    "Brand:"{{currentKeg.name}}
+    "Description:" {{currentKeg.brand}}
+    "Price:" {{currentKeg.price}}
+    "Alcohol content:" {{currentKeg.alcoholcontent}}
+    "Pints:" {{currentKeg.pints}}
     <input *ngIf="currentKeg.done === true" type="checkbox" checked (click)="toggleDone(currentKeg, false)"/>
     <input *ngIf="currentKeg.done === false" type="checkbox" (click)="toggleDone(currentKeg, true)"/>
     <button (click)="editButtonClicked(currentKeg)">Edit!</button>
+    <button (click)="sellButtonClicked(currentKeg)">Sell</button>
+    <button (click)="sellGrowlerButtonClicked(currentKeg)">Sell Growler</button>
+    <button (click)="sellLargeGrowlerButtonClicked(currentKeg)">Sell Growler</button>
+    <button (click)="happyHourButtonClicked(currentKeg)"class="btn btn-info">Happy hour</button>
+
   </li>
 </ul>
+
+
+
+<div class="owner">
+<h2>Tap Room</h2>
+<h3>{{currentFocus}}</h3>
+</div>
+<div class="popular-content text-center">
+            <div class="visit">
+               <div class="container">
+                  <div class="tor-hover">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="toronto-content">
+                           <div class="toronto">
+                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/english-brown-ale.jpg" alt="toronto view" class="image"/>
+
+                              <div class="overlay1">
+
+                                 <div class="text">
+
+
+
+                                    <button type="button">SELL</button>
+
+                                 </div>
+                              </div>
+
+                           <div class="tor-box">
+                              <h3>Traditional Bock</h3>
+                              <div class="rating">
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color1"></span>
+                              </div>
+                              <div class="toronto-border"></div>
+                                <span class="duration">124 pints </span>
+                           </div>
+                        </div>
+                     </div>
+                   </div>
+                  </div>
+                  <div class="tor-hover">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="toronto-content">
+                           <div class="toronto">
+                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/weizenbock.jpg" alt="toronto view" class="image"/>
+                              <div class="overlay1">
+                                 <div class="text">
+                                    <button type="button">SELL</button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tor-box">
+                              <h3>Weizenbock</h3>
+                              <div class="rating">
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color1"></span>
+                              </div>
+                              <div class="toronto-border"></div>
+                                <span class="duration">124 pints </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tor-hover">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="toronto-content">
+                           <div class="toronto">
+                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/german-helles.jpg" alt="toronto view" class="image"/>
+                              <div class="overlay1">
+                                 <div class="text">
+                                    <button type="button">SELL</button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tor-box">
+                              <h3>German Helles</h3>
+                              <div class="rating">
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color1"></span>
+                              </div>
+                              <div class="toronto-border"></div>
+                              <span class="duration">124 pints </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="visit visit-balance">
+               <div class="container">
+                  <div class="tor-hover">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="toronto-content">
+                           <div class="toronto">
+                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/german-schwarzbier.jpg" alt="toronto view" class="image"/>
+                              <div class="overlay1">
+                                 <div class="text">
+                                      <button type="button">SELL</button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tor-box">
+                              <h3>German Schwarzbier</h3>
+                              <div class="rating">
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color1"></span>
+                              </div>
+                              <div class="toronto-border"></div>
+                              <span class="duration">124 pints </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tor-hover">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="toronto-content">
+                           <div class="toronto">
+                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/vienna-lager.jpg" alt="toronto view" class="image"/>
+                              <div class="overlay1">
+                                 <div class="text">
+                                      <button type="button">SELL</button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tor-box">
+                              <h3>Vienna Lager</h3>
+                              <div class="rating">
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color1"></span>
+                              </div>
+                              <div class="toronto-border"></div>
+                              <span class="duration">124 pints </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tor-hover">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="toronto-content">
+                           <div class="toronto">
+                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/maibock.jpg" alt="toronto view" class="image"/>
+                              <div class="overlay1">
+                                 <div class="text">
+                                    <button type="button">SELL</button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tor-box">
+                              <h3>Maibock</h3>
+                              <div class="rating">
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color"></span>
+                                 <span class="fa fa-star color1"></span>
+                              </div>
+                              <div class="toronto-border"></div>
+                              <span class="duration">124 pints </span>
+
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>

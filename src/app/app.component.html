@@ -1,17 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
 
-<div style="text-align:center">
-  <h1>
-    Tap Room
-  </h1>
-  <h3>{{currentFocus}}</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
 
-  <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()">
-  </app-edit-keg>
-
-  <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+  </head>
+  <body>
+    <div class="container">
 
 
+    <div style="text-align:center">
 
-  <router-outlet></router-outlet>
+
+
+      <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()">
+      </app-edit-keg>
+
+      <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+      <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
+
+
+
+      <router-outlet></router-outlet>
+        </div>
+      </div>
+  </body>
+
+</html>

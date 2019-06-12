@@ -1,16 +1,23 @@
-<h1>New Keg</h1>
+<h1><font color="white">New Keg</font></h1>
 <div>
-  <label>Enter Keg Name:</label>
-  <input #newName>
-  <label>Enter Brand:</label>
-  <input #newBrand>
+  <label>Enter Keg Brand:</label>
+  <input #newName><br>
+  <label>Enter Description:</label>
+  <input #newBrand><br>
+  <label>Enter Price:</label>
+  <input #newPrice><br>
+  <label>Enter Alcohol Consume:</label>
+  <input #newAlcoholConsume><br>
+  <label>Enter Pints:</label>
+  <input #newPints><br>
+
 </div>
 <div>
   <label>Keg Price:</label>
-  <select #newPrice>
-    <option [value]="12"> Low Priority </option>
-    <option [value]="10"> Medium Priority </option>
-    <option [value]="8"> High Priority </option>
+  <select #newPriceSelect>
+    <option [value]="12"> Low  </option>
+    <option [value]="10"> Medium </option>
+    <option [value]="8"> High </option>
   </select>
-  <button (click)="submitForm(newName.value, newBrand.value, newPrice.value); newName.value='';">Add</button>
+  <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAlcoholConsume.value,newPints.value); newName.value='';">Add</button>
 </div>

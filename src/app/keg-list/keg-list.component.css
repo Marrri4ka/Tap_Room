@@ -1,0 +1,55 @@
+
+.owner h2{ text-align:center; color:#2f2f2f; font-weight:600; font-size:60px; }
+.popular-content h1{font-weight:600; margin-bottom:20px;}
+.popular-content {text-align: center;float:left; width:100%; margin-top:60px;}
+.popular-content p{font-size:18px; font-style:italic;font-family:'Playfair Display'; margin-bottom:30px;}
+.visit{float:left; width:100%; 	margin-top:80px;}
+.tor-box h3{font-weight:600; font-size:24px; line-height:26px;    margin: 20px 0 15px 0;}
+.color{color:#f4b843;}
+.color1{color:#eee;}
+.toronto-border{width:56px; height:1px; background:#e7e7e7; display:block; margin:20px auto;}
+.duration,.opening{font-size:17px; display:block; font-family:myriad pro; padding-bottom:5px; color:#555555;}
+.opening {padding-bottom:40px;}
+.tor-hover {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay1 {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.47);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .3s ease;
+}
+
+.tor-hover:hover .overlay1 {
+  bottom: 45%;
+  height: 55%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.text button{background:initial; border:1px solid orange; color:orange; border-radius:3px;    padding: 15px 50px;font-family:myriad pro; font-size:12px; font-weight:600;}
+.text button:hover{background:yellow; color:#000;}
+.toronto-content{text-align:center;display:inline-block; width:100%; position:relative; }
+.toronto-content:hover{box-shadow:0 0 40px rgba(0, 0, 0, 0.2);}
+.visit-balance{margin-top:40px;}
