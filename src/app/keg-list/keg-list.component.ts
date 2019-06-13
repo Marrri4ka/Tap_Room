@@ -10,13 +10,15 @@ import { Keg } from '../models/keg.model';
 export class KegListComponent  {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
-  filterByCompleteness: string = "incompleteTasks";
+  filterByAlcoholConsume: number = 128;
 
 kegs :  Keg[] = [
-  new Keg ('wine','wine',12,124,3),
-  new Keg ('wine','wine',10,124,5),
-  new Keg ('wine','wine',8,124,7),
+  new Keg ('wine','wine',12,124,3,12,4),
+  new Keg ('wine','wine',10,124,5,12,4),
+  new Keg ('wine','wine',8,124,7,12,4),
 ];
+
+
 
 editButtonClicked(kegToEdit: Keg) {
   this.clickSender.emit(kegToEdit);
@@ -27,9 +29,22 @@ sellButtonClicked(currentKeg: Keg)
 currentKeg.pints -=1;
 }
 
-happyHourButtonClicked(currentKeg: Keg)
+happyHourButtonClicked(childKegList)
 {
-  currentKeg.price -=5;
+  for(let i =0; i<childKegList.length; i++)
+  {
+    childKegList[i].price -=5;
+  }
+}
+
+
+
+resetPriceButtonClicked(childKegList)
+{
+  for (let i =0; i<childKegList.length; i++)
+  {
+    childKegList[i].price = childKegList[i].originalPrice;
+  }
 }
 
 sellGrowlerButtonClicked(currentKeg: Keg)
@@ -61,11 +76,9 @@ priceColor(currentKeg){
  }
 
  onChange(optionFromMenu) {
-  this.filterByCompleteness = optionFromMenu;
+  this.filterByAlcoholConsume= optionFromMenu;
 }
 
-toggleDone(clickedKeg: Keg, setCompleteness: boolean) {
-   clickedKeg.done = setCompleteness;
- }
+
 
 }

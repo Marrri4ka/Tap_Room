@@ -1,4 +1,13 @@
+
+
+
+
+
 <h1><font color="white">New Keg</font></h1>
+
+<button ng-click = "showme=true">Show form</button>
+<button ng-click = "showme=false">Hide form</button>
+<div ng-show="showme">
 <div>
   <label>Enter Keg Brand:</label>
   <input #newName><br>
@@ -10,6 +19,10 @@
   <input #newAlcoholConsume><br>
   <label>Enter Pints:</label>
   <input #newPints><br>
+  <label>Enter Password:</label>
+  <input #newPassword><br>
+  <label>Enter Image Number:</label>
+  <input #newImage><br>
 
 </div>
 <div>
@@ -19,5 +32,6 @@
     <option [value]="10"> Medium </option>
     <option [value]="8"> High </option>
   </select>
-  <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAlcoholConsume.value,newPints.value); newName.value='';">Add</button>
+  <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAlcoholConsume.value,newPints.value,newPrice.value,newPassword.value,newImage.value); newName.value='';">Add</button>
+</div>
 </div>

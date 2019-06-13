@@ -13,43 +13,38 @@
   </body>
 </html>
 
-<select (change)="onChange($event.target.value)">
-  <option value="allKegs">All Kegs</option>
-  <option value="completedKegs">Completed Kegs</option>
-  <option value="incompleteKegs" selected="selected">Incomplete Kegs</option>
-</select>
+
+
 
 <select (change)="onChange($event.target.value)">
-  <option value="allKegs">All Kegs</option>
-  <option value="completedKegs">Alcohol content uder 3</option>
-  <option value="incompleteKegs" selected="selected">Alcohol content under 7</option>
+  <option value=128 selected="selected">All Kegs</option>
+  <option value=7>Under 7</option>
+  <option value=3>Under 3</option>
 </select>
 
-<select (change)="onChange($event.target.value)">
-  <option value="allKegs">All Kegs</option>
-  <option value="completedKegs">Pints under 10</option>
 
-</select>
 
 <ul>
-  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">
+  <!-- <li*ngFor="let currentKeg of childKegList | alcoholConsume:filterByAlcoholConsume"> -->
     "Brand:"{{currentKeg.name}}
     "Description:" {{currentKeg.brand}}
     "Price:" {{currentKeg.price}}
     "Alcohol content:" {{currentKeg.alcoholcontent}}
     "Pints:" {{currentKeg.pints}}
-    <input *ngIf="currentKeg.done === true" type="checkbox" checked (click)="toggleDone(currentKeg, false)"/>
-    <input *ngIf="currentKeg.done === false" type="checkbox" (click)="toggleDone(currentKeg, true)"/>
+    "Image:" {{currentKeg.image}}
+
     <button (click)="editButtonClicked(currentKeg)">Edit!</button>
-    <button (click)="sellButtonClicked(currentKeg)">Sell</button>
+
     <button (click)="sellGrowlerButtonClicked(currentKeg)">Sell Growler</button>
     <button (click)="sellLargeGrowlerButtonClicked(currentKeg)">Sell Growler</button>
-    <button (click)="happyHourButtonClicked(currentKeg)"class="btn btn-info">Happy hour</button>
 
-  </li>
+<!--
+  </li> -->
 </ul>
 
-
+  <button (click)="happyHourButtonClicked(childKegList)"class="btn btn-info">Happy hour</button>
+  <button (click)="resetPriceButtonClicked(childKegList)"class="btn btn-warning">Original price</button>
+<!--  -->
 
 <div class="owner">
 <h2>Tap Room</h2>
@@ -59,10 +54,11 @@
             <div class="visit">
                <div class="container">
                   <div class="tor-hover">
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="toronto-content">
+                     <div *ngFor="let currentKeg of childKegList | alcoholConsume:filterByAlcoholConsume" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div   class="toronto-content" >
+
                            <div class="toronto">
-                              <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/english-brown-ale.jpg" alt="toronto view" class="image"/>
+                              <img src= "{{currentKeg.image}}" alt="toronto view" class="image"/>
 
                               <div class="overlay1">
 
@@ -70,7 +66,7 @@
 
 
 
-                                    <button type="button">SELL</button>
+                                          <button (click)="sellButtonClicked(currentKeg)">Sell</button>
 
                                  </div>
                               </div>
@@ -85,13 +81,19 @@
                                  <span class="fa fa-star color1"></span>
                               </div>
                               <div class="toronto-border"></div>
-                                <span class="duration">124 pints </span>
+                                <span class="duration">
+                                "Brand:"{{currentKeg.name}}<br>
+                                "Description:" {{currentKeg.brand}}<br>
+                                "Price:" {{currentKeg.price}}<br>
+                                "Alcohol content:" {{currentKeg.alcoholcontent}}<br>
+                                "Pints:" {{currentKeg.pints}}<br>
+                                </span>
                            </div>
                         </div>
                      </div>
                    </div>
                   </div>
-                  <div class="tor-hover">
+                  <!-- <div class="tor-hover">
                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="toronto-content">
                            <div class="toronto">
@@ -99,6 +101,7 @@
                               <div class="overlay1">
                                  <div class="text">
                                     <button type="button">SELL</button>
+
                                  </div>
                               </div>
                            </div>
@@ -116,8 +119,8 @@
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="tor-hover">
+                  </div> -->
+                  <!-- <div class="tor-hover">
                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="toronto-content">
                            <div class="toronto">
@@ -142,10 +145,10 @@
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-            <div class="visit visit-balance">
+                  </div> -->
+               <!-- </div>
+            </div> -->
+            <!-- <div class="visit visit-balance">
                <div class="container">
                   <div class="tor-hover">
                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -227,5 +230,5 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> -->
          </div>
