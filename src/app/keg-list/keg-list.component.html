@@ -33,10 +33,8 @@
     "Pints:" {{currentKeg.pints}}
     "Image:" {{currentKeg.image}}
 
-    <button (click)="editButtonClicked(currentKeg)">Edit!</button>
 
-    <button (click)="sellGrowlerButtonClicked(currentKeg)">Sell Growler</button>
-    <button (click)="sellLargeGrowlerButtonClicked(currentKeg)">Sell Growler</button>
+
 
 <!--
   </li> -->
@@ -87,6 +85,10 @@
                                 "Price:" {{currentKeg.price}}<br>
                                 "Alcohol content:" {{currentKeg.alcoholcontent}}<br>
                                 "Pints:" {{currentKeg.pints}}<br>
+                                <button (click)="editButtonClicked(currentKeg)">Edit!</button>
+
+                                    <button (click)="sellGrowlerButtonClicked(currentKeg)">Sell Growler</button>
+                                    <button (click)="sellLargeGrowlerButtonClicked(currentKeg)">Sell Growler</button>
                                 </span>
                            </div>
                         </div>

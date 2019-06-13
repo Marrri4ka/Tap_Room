@@ -20,7 +20,7 @@ export class NewKegComponent {
        'https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/german-schwarzbier.jpg',
       'https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/vienna-lager.jpg',
       'https://cdnimg.webstaurantstore.com/uploads/buying_guide/2017/2/maibock.jpg']
-      let imageNumber = parseInt(image);
+      let imageNumber =image;
       let finalImage = images[imageNumber];
 
 
